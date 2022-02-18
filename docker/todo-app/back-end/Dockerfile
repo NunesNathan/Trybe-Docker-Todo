@@ -2,12 +2,8 @@ FROM node:14-alpine
 
 WORKDIR /back-end
 
-COPY package.json .
-COPY package-lock.json .
-
-RUN ["npm", "install"]
-
-COPY node_modules.tar.gz .
+ADD node_modules.tar.gz .
+COPY . .
 
 EXPOSE 3001
 
